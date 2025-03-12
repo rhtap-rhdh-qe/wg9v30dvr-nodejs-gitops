@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: wg9v30dvr-nodejs-gitops
+  description: This is GitOps manifest for wg9v30dvr-nodejs   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=wg9v30dvr-nodejs
+    backstage.io/kubernetes-id: wg9v30dvr-nodejs 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: wg9v30dvr-nodejs   
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:wg9v30dvr-nodejs
